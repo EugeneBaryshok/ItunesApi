@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AlbumLibrary</string>
+    <string name="loading">Loading…</string>
+    <string name="backdrop_title">ItunesApi</string>
+    <string name="backdrop_subtitle">Linkin Park Albums</string>
+    <string name="search_menu_item">Search</string>
+    <string name="album_name">Album</string>
+    <string name="track_number">1</string>
+    <string name="track_name">Track Name</string>
+    <string name="error_message">Error</string>
+</resources>
