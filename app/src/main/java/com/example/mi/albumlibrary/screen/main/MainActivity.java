@@ -83,8 +83,7 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Sear
 
         mLoadingView = LoadingDialog.view(getSupportFragmentManager());
 
-        mPresenter = new MainPresenter(this);
-        mPresenter.init();
+//        mPresenter.init();
     }
 
     @Override
@@ -95,7 +94,12 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Sear
 
         //Setup adapter and grid count depends on orientation
 
-        albumAdapter = new AlbumAdapter(this, albumList, mPresenter);
+//        albumAdapter = new AlbumAdapter(this, albumList, mPresenter);
+        albumAdapter = new AlbumAdapter(getMvpDelegate(), mPresenter);
+        albumAdapter.setAlbums(albumList);
+
+
+
         RecyclerView.LayoutManager mLayoutManager;
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             mLayoutManager = new GridLayoutManager(this, 2);
@@ -136,6 +140,10 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, Sear
         return true;
     }
 
+//    @Override
+//    public void setAlbums(List<Album> albums) {
+//        albumAdapter.setAlbums(albums);
+//    }
 
     @Override
     public void showError() {
